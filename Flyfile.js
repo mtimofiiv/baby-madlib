@@ -6,7 +6,7 @@ import pjson from './package.json'
 const paths = {
   base: 'src',
   js: 'src/js/app.js',
-  less: 'src/less/style.less',
+  sass: 'src/sass/style.scss',
   html: 'src/index.html'
 }
 
@@ -36,8 +36,8 @@ export function* build() {
 
   // Build the LESS CSS
   yield this
-    .source(paths.less)
-    .less()
+    .source(paths.sass)
+    .sass({ outputStyle: 'compressed' })
     .target(targets.assets)
 
   // Move over the index.html

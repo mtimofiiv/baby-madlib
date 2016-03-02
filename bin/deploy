@@ -4,15 +4,19 @@ echo '=> Building the latest revision...'
 fly build
 
 echo '=> Un-ignoring `build` folder temporarily...'
+git stash
 git checkout gh-pages
 mv .gitignore _.gitignore
 
-echo '=> Deploying `build` folder to origin/gh-pages...'
+echo '=> Deploying build folder to origin/gh-pages...'
 cp ./CNAME build
 git add build/*
-git commit -m 'test'
+git commit --allow-empty-message -m ''
 git push origin `git subtree split --prefix build gh-pages`:gh-pages --force
 git checkout master
 
 echo '=> Reverting .gitignore...'
 mv _.gitignore .gitignore
+git stash apply
+
+echo '=> Done.'
