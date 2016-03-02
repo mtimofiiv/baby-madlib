@@ -1,0 +1,20 @@
+{
+  "name": "madlib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "fly build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "fly": "^0.9.1",
+    "fly-browserify": "^1.0.0",
+    "fly-imagemin": "0.0.5",
+    "fly-less": "^0.3.0",
+    "fly-react": "^0.1.1",
+    "fly-uglify": "^1.0.0"
+  }
+}
