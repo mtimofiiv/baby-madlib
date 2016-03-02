@@ -6,6 +6,7 @@ fly build
 echo '=> Un-ignoring `build` folder temporarily...'
 git stash
 git checkout gh-pages
+git pull
 mv .gitignore _.gitignore
 
 echo '=> Deploying build folder to origin/gh-pages...'
