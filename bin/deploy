@@ -3,17 +3,12 @@
 echo '=> Building the latest revision...'
 fly build
 
-echo '=> Un-ignoring `build` folder temporarily...'
-mv .gitignore _.gitignore
-
 echo '=> Deploying build folder to origin/gh-pages...'
+mv .gitignore _.gitignore
 cp ./CNAME build
-git add build/*
-git commit --allow-empty-message -m ''
-git push origin `git subtree split --prefix build master`:gh-pages --force
-#git subtree push --prefix=build origin gh-pages
 
-echo '=> Reverting .gitignore...'
+git subtree split --prefix build -b gh-pages
+git push origin gh-pages:gh-pages --force
+git branch -D gh-pages
+
 mv _.gitignore .gitignore
-
-echo '=> Done.'
