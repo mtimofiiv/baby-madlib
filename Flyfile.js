@@ -30,6 +30,7 @@ export function* build() {
   // Build the javascript
   yield this
     .source(paths.js)
+    .babel({ presets: [ 'es2015' ], sourceMaps: true })
     .uglify()
     .target(targets.assets)
 

@@ -1,1 +1,7 @@
-console.log('script.js');
+class App {
+
+  init() {
+    console.log('hello');
+  }
+
+}

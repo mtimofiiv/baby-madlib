@@ -11,6 +11,7 @@
   "dependencies": {
     "dotenv": "^2.0.0",
     "fly": "^0.9.1",
+    "fly-babel": "^0.7.1",
     "fly-browserify": "^1.0.0",
     "fly-imagemin": "0.0.5",
     "fly-less": "^0.3.0",
