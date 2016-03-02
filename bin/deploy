@@ -3,16 +3,16 @@
 echo '=> Building the latest revision...'
 fly build
 
-echo '=> Copying CNAME file...'
-cp ./CNAME build
-
 echo '=> Un-ignoring `build` folder temporarily...'
+git checkout gh-pages
 mv .gitignore _.gitignore
 
 echo '=> Deploying `build` folder to origin/gh-pages...'
-git checkout gh-pages
-git subtree push --prefix build origin gh-pages
+cp ./CNAME build
+git add build/*
+git commit -m 'test'
+git push origin `git subtree split --prefix build gh-pages`:gh-pages --force
 git checkout master
 
 echo '=> Reverting .gitignore...'
-#mv _.gitignore .gitignore
+mv _.gitignore .gitignore
