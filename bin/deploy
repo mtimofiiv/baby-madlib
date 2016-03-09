@@ -9,7 +9,7 @@ mv .gitignore _.gitignore
 cp ./CNAME build
 
 git add build/*
-git commit -m "building: ${$( date +%T )}"
+git commit -m "building"
 
 git subtree split --prefix build -b gh-pages
 git push origin gh-pages:gh-pages --force
