@@ -7,7 +7,8 @@ const paths = {
   base: 'src',
   js: 'src/js/app.js',
   sass: 'src/sass/style.scss',
-  html: 'src/index.html'
+  html: 'src/index.html',
+  images: 'src/images/*.{gif,jpg,png,svg}'
 }
 
 const targets = {
@@ -30,7 +31,7 @@ export function* build() {
   // Build the javascript
   yield this
     .source(paths.js)
-    .babel({ presets: [ 'es2015' ], sourceMaps: true })
+    .browserify({ transform: [ require('babelify') ], paths: './node_modules' })
     .uglify()
     .target(targets.assets)
 
@@ -45,6 +46,12 @@ export function* build() {
     .source(paths.html)
     .filter((f) => `${f}`.replace('@ENV', env))
     .target(targets.html)
+
+  // Optimize images
+  yield this
+    .source(paths.images)
+    .imagemin({ progressive: true })
+    .target(targets.assets)
 }
 
 export default function* () {
