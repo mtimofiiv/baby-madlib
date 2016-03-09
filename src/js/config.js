@@ -1,4 +1,4 @@
-export default [
+const data = [
 
   {
 
@@ -54,4 +54,6 @@ export default [
 
   }
 
-]
+];
+
+export default data;

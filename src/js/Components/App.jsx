@@ -2,7 +2,7 @@ import React from 'react';
 
 import Hero from './Hero.jsx';
 import Form from './Form.jsx';
-import Image from './Image.jsx';
+import Canvas from './Canvas.jsx';
 
 class App extends React.Component {
 
@@ -14,8 +14,12 @@ class App extends React.Component {
     return (
       <div>
         <Hero />
-        <Form formData={this.props} />
-        <Image />
+        <div className="container">
+          <Form formData={this.props} />
+        </div>
+        <div className="container">
+          <Canvas />
+        </div>
       </div>
     );
   }

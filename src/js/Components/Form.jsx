@@ -20,13 +20,17 @@ class Form extends React.Component {
       <p className="control" key={key}>
         <label className="label">{label}</label>
         <span className="select">
-          <select>
+          <select onChange={this.changed}>
             <option>- select -</option>
             {answers}
           </select>
         </span>
       </p>
     );
+  }
+
+  changed(e, v) {
+    console.log(e, v);
   }
 
   render() {
@@ -39,6 +43,7 @@ class Form extends React.Component {
     return (
       <section className="section">
         {form}
+        <button onClick={this.clicked}>sdfsdf</button>
       </section>
     );
   }

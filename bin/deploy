@@ -15,9 +15,9 @@ git subtree split --prefix build -b gh-pages
 git push origin gh-pages:gh-pages --force
 git branch -D gh-pages
 
-git reset --soft HEAD~
-
 rm -rf build
 mv _.gitignore .gitignore
 
+git reset --soft HEAD~
+git rm build/*
 git push
