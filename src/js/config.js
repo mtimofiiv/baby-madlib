@@ -7,7 +7,7 @@ const data = {
   copy: {
     title: 'Fiiva and the Tuna are having a child.',
     subtitle: 'Everybody knows the combination is going to be incredible. But just how incredible?',
-    defaultSelectText: ' - select - '
+    defaultSelectText: 'select one...'
   },
 
   madlib: {

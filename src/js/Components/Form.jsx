@@ -30,7 +30,9 @@ class Form extends React.Component {
 
   changed(e) {
     const action = this.props.changeChoice;
-    return action(e.target.dataset.slug, e.target.value);
+    const value = (e.target.value === this.props.defaultSelectText) ? null : e.target.value;
+
+    return action(e.target.dataset.slug, value);
   }
 
   render() {
