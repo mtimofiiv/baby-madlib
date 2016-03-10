@@ -16,15 +16,15 @@ class Form extends React.Component {
     }
 
     return (
-      <p className="control" key={key}>
-        <label className="label">{question.label}</label>
+      <span className="control" key={key}>
+        {question.label}
         <span className="select">
           <select key={key} data-slug={key} onChange={this.changed.bind(this)}>
             <option>{this.props.defaultSelectText}</option>
             {answers}
           </select>
         </span>
-      </p>
+      </span>
     );
   }
 
@@ -33,6 +33,10 @@ class Form extends React.Component {
     const value = (e.target.value === this.props.defaultSelectText) ? null : e.target.value;
 
     return action(e.target.dataset.slug, value);
+  }
+
+  closing() {
+    return { __html: this.props.closingRemark };
   }
 
   render() {
@@ -44,7 +48,10 @@ class Form extends React.Component {
 
     return (
       <section className="section">
-        {form}
+        <p className="choices">
+          {form}
+        </p>
+        <p dangerouslySetInnerHTML={this.closing()} />
       </section>
     );
   }

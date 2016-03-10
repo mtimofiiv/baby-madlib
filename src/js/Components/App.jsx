@@ -25,11 +25,13 @@ class App extends React.Component {
 
     let weight = this.state.weight;
 
-    if (this.props.madlib[key].answers[value].pick === 'mike') {
+    if (this.props.madlib[key].answers[value].pick === 'mike' && weight < 4) {
       weight++;
-    } else if (this.props.madlib[key].answers[value].pick === 'tina') {
+    } else if (this.props.madlib[key].answers[value].pick === 'tina' && weight > 0) {
       weight--;
     }
+
+    console.log({ weight });
 
     this.setState({ store, weight });
   }
@@ -67,6 +69,7 @@ class App extends React.Component {
             madlib={this.props.madlib}
             store={this.state.store}
             audioQuestion={this.props.audioQuestion}
+            closingRemark={this.props.copy.closingRemark}
             face={this.face()}
             />
 

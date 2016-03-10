@@ -13,7 +13,10 @@ const styles = {
   },
 
   faceImage: {
-
+    top: 193,
+    left: 500,
+    width: 200,
+    height: 200
   }
 
 };
@@ -42,10 +45,15 @@ class Canvas extends React.Component {
     return widgets;
   }
 
+  currentFaceSrc() {
+    return `assets/${this.props.face}`;
+  }
+
   render() {
     return (
       <Surface width={960} height={640} top={0} left={0}>
         <Image style={styles.roomImage} src="assets/room.jpg" />
+        <Image style={styles.faceImage} src={this.currentFaceSrc()} />
         {this.widgets()}
       </Surface>
     );
