@@ -43,7 +43,6 @@ class Form extends React.Component {
     return (
       <section className="section">
         {form}
-        <button onClick={this.clicked}>sdfsdf</button>
       </section>
     );
   }

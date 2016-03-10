@@ -24,14 +24,10 @@ class Canvas extends React.Component {
     const store = this.props.store;
     const widgets = [];
 
-    console.log(store);
-
     for (let question in store) {
-      if (store[question] !== null) {
+      if (store[question] !== null && this.props.audioQuestion !== question) {
         const style = this.props.madlib[question].style;
         const src = `assets/${this.props.madlib[question].answers[store[question]].media}`;
-
-        console.log(style);
 
         widgets.push(
           <Image style={style} src={src} key={question} />

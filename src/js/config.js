@@ -2,6 +2,7 @@ const data = {
 
   basePhoto: 'room.jpg',
   introImage: 'big-tuna.png',
+  audioQuestion: 'music',
 
   copy: {
     title: 'Fiiva and the Tuna are having a child.',
@@ -39,19 +40,19 @@ const data = {
       answers: {
         marxism: {
           title: 'Marxism',
-          media: 'che.jpg'
+          media: 'che.png'
         },
         feminism: {
           title: 'Feminism',
-          media: 'rosie.jpg'
+          media: 'rosie.png'
         }
       },
 
       style: {
-        left: 500,
-        top: 200,
-        width: 100,
-        height: 100
+        left: 347,
+        top: 178,
+        width: 115,
+        height: 96
       }
     },
 

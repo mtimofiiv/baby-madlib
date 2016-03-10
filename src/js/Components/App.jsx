@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from './Hero.jsx';
 import Form from './Form.jsx';
 import Canvas from './Canvas.jsx';
+import Audio from './Audio.jsx';
 
 class App extends React.Component {
 
@@ -31,6 +32,11 @@ class App extends React.Component {
           introImage={this.props.introImage}
           />
 
+        <Audio
+          madlib={this.props.madlib}
+          store={this.state.store}
+          audioQuestion={this.props.audioQuestion}
+          />
         <div className="container">
 
           <Form
@@ -45,6 +51,7 @@ class App extends React.Component {
           <Canvas
             madlib={this.props.madlib}
             store={this.state.store}
+            audioQuestion={this.props.audioQuestion}
             />
 
         </div>
