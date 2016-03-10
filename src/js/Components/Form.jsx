@@ -7,21 +7,20 @@ class Form extends React.Component {
   }
 
   formInput(key, question) {
-    const label = question.label;
     const answers = [];
 
     for (let i in question.answers) {
       answers.push(
-        <option key={i}>{question.answers[i].title}</option>
+        <option value={i} key={i}>{question.answers[i].title}</option>
       );
     }
 
     return (
       <p className="control" key={key}>
-        <label className="label">{label}</label>
+        <label className="label">{question.label}</label>
         <span className="select">
-          <select onChange={this.changed}>
-            <option>- select -</option>
+          <select key={key} data-slug={key} onChange={this.changed.bind(this)}>
+            <option>{this.props.defaultSelectText}</option>
             {answers}
           </select>
         </span>
@@ -29,15 +28,16 @@ class Form extends React.Component {
     );
   }
 
-  changed(e, v) {
-    console.log(e, v);
+  changed(e) {
+    const action = this.props.changeChoice;
+    return action(e.target.dataset.slug, e.target.value);
   }
 
   render() {
     const form = [];
 
-    for (let i in this.props.formData) {
-      form.push(this.formInput(i, this.props.formData[i]));
+    for (let question in this.props.madlib) {
+      form.push(this.formInput(question, this.props.madlib[question]));
     }
 
     return (

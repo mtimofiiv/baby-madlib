@@ -1,59 +1,84 @@
-const data = [
+const data = {
 
-  {
+  basePhoto: 'room.jpg',
+  introImage: 'big-tuna.png',
 
-    label: 'Favorite sports team',
-    key: 'sports',
-
-    answers: [
-      {
-        title: 'Denver Broncos',
-        image: 'broncos.png'
-      },
-      {
-        title: 'New England Patriots',
-        image: 'patriots.png'
-      }
-    ]
-
+  copy: {
+    title: 'Fiiva and the Tuna are having a child.',
+    subtitle: 'Everybody knows the combination is going to be incredible. But just how incredible?',
+    defaultSelectText: ' - select - '
   },
 
-  {
+  madlib: {
 
-    label: 'Most important philosophy',
-    key: 'philosphy',
+    sports: {
+      label: 'Favorite sports team',
 
-    answers: [
-      {
-        title: 'Marxism',
-        image: 'che.jpg'
+      answers: {
+        broncos: {
+          title: 'Denver Broncos',
+          media: 'broncos.png'
+        },
+        patriots: {
+          title: 'New England Patriots',
+          media: 'patriots.png'
+        }
       },
-      {
-        title: 'Feminism',
-        image: 'rosie.jpg'
+
+      style: {
+        left: 200,
+        top: 200,
+        width: 100,
+        height: 100
       }
-    ]
+    },
 
-  },
+    philosophy: {
+      label: 'Most important philosophy',
 
-  {
-
-    label: 'Favorite music',
-    key: 'music',
-
-    answers: [
-      {
-        title: 'David Bowie',
-        media: 'N4d7Wp9kKjA'
+      answers: {
+        marxism: {
+          title: 'Marxism',
+          media: 'che.jpg'
+        },
+        feminism: {
+          title: 'Feminism',
+          media: 'rosie.jpg'
+        }
       },
-      {
-        title: 'Miley Cyrus',
-        media: 'M11SvDtPBhA'
+
+      style: {
+        left: 500,
+        top: 200,
+        width: 100,
+        height: 100
       }
-    ]
+    },
+
+    music: {
+      label: 'Favorite music',
+
+      answers: {
+        bowie: {
+          title: 'David Bowie',
+          media: 'N4d7Wp9kKjA'
+        },
+        miley: {
+          title: 'Miley Cyrus',
+          media: 'M11SvDtPBhA'
+        }
+      },
+
+      style: {
+        left: 800,
+        top: 200,
+        width: 100,
+        height: 100
+      }
+    }
 
   }
 
-];
+};
 
 export default data;

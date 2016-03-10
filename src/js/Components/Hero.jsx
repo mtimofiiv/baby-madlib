@@ -11,13 +11,13 @@ class Hero extends React.Component {
       <section className="hero is-warning">
         <div className="hero-content">
           <div className="container">
-            <img src="assets/big-tuna.png" />
+            <img src={"assets/" + this.props.introImage} />
 
             <h1 className="title">
-              Fiiva and the Tuna are having a child.
+              {this.props.title}
             </h1>
             <h2 className="subtitle">
-              Everybody knows the combination is going to be incredible. But just how incredible?
+              {this.props.subtitle}
             </h2>
           </div>
         </div>
@@ -26,5 +26,11 @@ class Hero extends React.Component {
   }
 
 }
+
+Hero.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  subtitle: React.PropTypes.string.isRequired,
+  introImage: React.PropTypes.string.isRequired
+};
 
 export default Hero;
