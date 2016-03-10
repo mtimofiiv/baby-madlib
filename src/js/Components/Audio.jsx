@@ -33,7 +33,7 @@ class Audio extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="audio-container">
         {this.element()}
       </div>
     );

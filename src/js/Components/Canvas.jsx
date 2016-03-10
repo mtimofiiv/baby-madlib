@@ -10,6 +10,10 @@ const styles = {
     left: 0,
     width: 960,
     height: 640
+  },
+
+  faceImage: {
+
   }
 
 };

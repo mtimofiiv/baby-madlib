@@ -5,46 +5,60 @@ const data = {
   audioQuestion: 'music',
 
   copy: {
-    title: 'Fiiva and the Tuna are having a child.',
-    subtitle: 'Everybody knows the combination is going to be incredible. But just how incredible?',
-    defaultSelectText: 'select one...'
+    title: 'Fiiv and the Tuna are having a child.',
+    subtitle: 'Even though my mummy and daddy are awesome, they don’t always agree on everything. Mummy loves reality TV, daddy hates it. Daddy wears shorts in the winter, mummy is always cold. So who will I take after? Help me figure it out!',
+    closingRemark: 'Thanks for helping me figure out who I’ll be. Can’t wait to meet you all in July!<br><br>xo<br>Baby Jorts',
+    defaultSelectText: 'select one...',
+    footer: 'Made with <i class="fa fa-fw fa-heartbeat"></i> in Amsterdam, as was the baby.<br>The source is available on <a href="https://github.com/mtimofiiv/baby-madlib"><i class="fa fa-fw fa-github-alt"></i></a>'
   },
+
+  faces: [
+    'face-0.png',
+    'face-1.png',
+    'face-2.png',
+    'face-3.png',
+    'face-4.png'
+  ],
 
   madlib: {
 
     sports: {
-      label: 'Favorite sports team',
+      label: 'Of course I love football, so I’ll probably be a fan of ',
 
       answers: {
         broncos: {
-          title: 'Denver Broncos',
-          media: 'broncos.png'
+          title: 'the defending SuperBowl Champions',
+          media: 'broncos.png',
+          pick: 'tina'
         },
         patriots: {
-          title: 'New England Patriots',
-          media: 'patriots.png'
+          title: 'the team with the most SuperBowl wins in the last 15 years (4!)',
+          media: 'patriots.png',
+          pick: 'mike'
         }
       },
 
       style: {
-        left: 200,
-        top: 200,
-        width: 100,
-        height: 100
+        left: 506,
+        top: 192,
+        width: 69,
+        height: 39
       }
     },
 
     philosophy: {
-      label: 'Most important philosophy',
+      label: 'And mum and dad both believe in equality of all people, but will my soapbox be all about ',
 
       answers: {
         marxism: {
-          title: 'Marxism',
-          media: 'che.png'
+          title: 'economic and social justice',
+          media: 'che.png',
+          pick: 'mike'
         },
         feminism: {
-          title: 'Feminism',
-          media: 'rosie.png'
+          title: 'gender equity and opportunity',
+          media: 'rosie.png',
+          pick: 'tina'
         }
       },
 
@@ -57,26 +71,46 @@ const data = {
     },
 
     music: {
-      label: 'Favorite music',
+      label: 'My parents sure do like some weird music, but I think I’ll like to ',
 
       answers: {
         bowie: {
-          title: 'David Bowie',
-          media: 'N4d7Wp9kKjA'
+          title: 'listen to music that says something about the world',
+          media: 'N4d7Wp9kKjA',
+          pick: 'mike'
         },
         miley: {
-          title: 'Miley Cyrus',
-          media: 'M11SvDtPBhA'
+          title: 'have a dance party and sing along on Friday nights!',
+          media: 'M11SvDtPBhA',
+          pick: 'tina'
+        }
+      }
+
+    },
+
+    food: {
+      label: 'And mmmmm, food, we know they both like lots of that. I think I’ll prefer ',
+
+      answers: {
+        marxism: {
+          title: 'anything that comes from the dead carcass of an animal',
+          media: 'meat.png',
+          pick: 'mike'
+        },
+        feminism: {
+          title: 'whatever makes my cheeks pucker - sour sour sour!',
+          media: 'lemon.png',
+          pick: 'tina'
         }
       },
 
       style: {
-        left: 800,
-        top: 200,
-        width: 100,
-        height: 100
+        left: 353,
+        top: 343,
+        width: 153,
+        height: 297
       }
-    }
+    },
 
   }
 

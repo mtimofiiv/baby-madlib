@@ -4,6 +4,7 @@ import Hero from './Hero.jsx';
 import Form from './Form.jsx';
 import Canvas from './Canvas.jsx';
 import Audio from './Audio.jsx';
+import Footer from './Footer.jsx';
 
 class App extends React.Component {
 
@@ -13,14 +14,28 @@ class App extends React.Component {
     const store = {};
     for (let question in this.props.madlib) store[question] = null;
 
-    this.state = { store };
+    let weight = 2;
+
+    this.state = { store, weight };
   }
 
   changeChoice(key, value) {
     const store = this.state.store;
     store[key] = value;
 
-    this.setState({ store });
+    let weight = this.state.weight;
+
+    if (this.props.madlib[key].answers[value].pick === 'mike') {
+      weight++;
+    } else if (this.props.madlib[key].answers[value].pick === 'tina') {
+      weight--;
+    }
+
+    this.setState({ store, weight });
+  }
+
+  face() {
+    return this.props.faces[this.state.weight];
   }
 
   render() {
@@ -52,9 +67,12 @@ class App extends React.Component {
             madlib={this.props.madlib}
             store={this.state.store}
             audioQuestion={this.props.audioQuestion}
+            face={this.face()}
             />
 
         </div>
+
+        <Footer caption={this.props.copy.footer} />
       </div>
     );
   }
