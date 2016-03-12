@@ -31,13 +31,7 @@ class App extends React.Component {
       weight--;
     }
 
-    console.log({ weight });
-
     this.setState({ store, weight });
-  }
-
-  face() {
-    return this.props.faces[this.state.weight];
   }
 
   render() {
@@ -60,6 +54,7 @@ class App extends React.Component {
             madlib={this.props.madlib}
             defaultSelectText={this.props.copy.defaultSelectText}
             changeChoice={this.changeChoice.bind(this)}
+            introText={this.props.copy.formIntroText}
             />
 
         </div>
@@ -70,7 +65,6 @@ class App extends React.Component {
             store={this.state.store}
             audioQuestion={this.props.audioQuestion}
             closingRemark={this.props.copy.closingRemark}
-            face={this.face()}
             />
 
         </div>

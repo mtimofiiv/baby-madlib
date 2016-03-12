@@ -8,17 +8,31 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <section className="hero is-warning">
+      <section className="hero is-danger is-fullheight">
         <div className="hero-content">
           <div className="container">
-            <img src={"assets/" + this.props.introImage} />
 
-            <h1 className="title">
+            <h1 className="title is-1">
               {this.props.title}
             </h1>
-            <h2 className="subtitle">
-              {this.props.subtitle}
-            </h2>
+
+            <div className="columns">
+              <div className="column">
+                <img src={"assets/" + this.props.introImage} />
+              </div>
+
+              <div className="column">
+
+                <h2 className="subtitle is-3">
+                  {this.props.subtitle}
+                </h2>
+
+              </div>
+            </div>
+
+            <p className="is-text-centered chevron">
+              <i className="fa fa-chevron-down"></i>
+            </p>
           </div>
         </div>
       </section>

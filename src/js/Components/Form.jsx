@@ -16,15 +16,21 @@ class Form extends React.Component {
     }
 
     return (
-      <span className="control" key={key}>
-        {question.label}
-        <span className="select">
-          <select key={key} data-slug={key} onChange={this.changed.bind(this)}>
-            <option>{this.props.defaultSelectText}</option>
-            {answers}
-          </select>
+      <p className="selection">
+        <span className="control" key={key}>
+
+          {question.label[0]}
+
+          <span className="select is-large is-danger">
+            <select className="is-large is-danger" key={key} data-slug={key} onChange={this.changed.bind(this)}>
+              <option>{this.props.defaultSelectText}</option>
+              {answers}
+            </select>
+          </span>
+
+          {question.label[1]}
         </span>
-      </span>
+      </p>
     );
   }
 
@@ -47,11 +53,18 @@ class Form extends React.Component {
     }
 
     return (
-      <section className="section">
-        <p className="choices">
+      <section className="section selection-form">
+        <p className="intro-text is-text-centered">{this.props.introText}</p>
+
+        <div className="choices">
           {form}
-        </p>
+        </div>
+
         <p dangerouslySetInnerHTML={this.closing()} />
+
+        <p className="is-text-centered chevron">
+          <i className="fa fa-chevron-down"></i>
+        </p>
       </section>
     );
   }
