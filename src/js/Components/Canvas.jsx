@@ -24,6 +24,8 @@ class Canvas extends React.Component {
     const store = this.props.store;
     const widgets = [];
 
+    this.setState({ redraw: true });
+
     for (let question in store) {
       if (store[question] !== null && this.props.audioQuestion !== question) {
         const style = this.props.madlib[question].style;
