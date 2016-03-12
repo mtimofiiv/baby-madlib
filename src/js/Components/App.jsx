@@ -56,6 +56,7 @@ class App extends React.Component {
             changeChoice={this.changeChoice.bind(this)}
             introText={this.props.copy.formIntroText}
             closingText={this.props.copy.closingText}
+            closingRemark={this.props.copy.closingRemark}
             />
 
         </div>

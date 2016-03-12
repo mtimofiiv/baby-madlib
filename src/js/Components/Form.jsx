@@ -41,6 +41,10 @@ class Form extends React.Component {
     return action(e.target.dataset.slug, value);
   }
 
+  caption() {
+    return { __html: this.props.closingRemark };
+  }
+
   render() {
     const form = [];
 
@@ -54,6 +58,8 @@ class Form extends React.Component {
 
         <div className="choices">
           {form}
+
+          <p className="selection" dangerouslySetInnerHTML={this.caption()} />
         </div>
 
         <p className="intro-text is-text-centered">{this.props.closingText}</p>
