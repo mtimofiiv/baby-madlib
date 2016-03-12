@@ -6,7 +6,7 @@ const data = {
 
   copy: {
     title: 'Fiiv and the Tuna are having a child...',
-    subtitle: '"Even though my mom and dad are awesome, they don’t always agree on everything. Mom loves reality TV, dad hates it. Dad wears shorts in the winter, mom is always cold. So who will I take after? Help me figure it out!"',
+    subtitle: '"Even though my mum and dad are awesome, they don’t always agree on everything. Mum loves reality TV, dad hates it. Dad wears shorts in the winter, mum is always cold. So who will I take after? Help me figure it out!"',
     closingText: '(now scroll down to see how you have ruined our child)',
     closingRemark: `Thanks for helping me through my first identity crisis. Can't wait to meet you all in July!`,
     formIntroText: '(help me figure out who I am by picking my traits below)',
@@ -45,7 +45,7 @@ const data = {
 
     philosophy: {
       label: [
-        'And mom and dad both believe in equality of all people, but will my soapbox be all about ',
+        'And mum and dad both believe in equality of all people, but will my soapbox be all about ',
         '? '
       ],
 
