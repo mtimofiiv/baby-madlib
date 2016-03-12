@@ -7,7 +7,8 @@ const data = {
   copy: {
     title: 'Fiiv and the Tuna are having a child...',
     subtitle: '"Even though my mom and dad are awesome, they don’t always agree on everything. Mom loves reality TV, dad hates it. Dad wears shorts in the winter, mom is always cold. So who will I take after? Help me figure it out!"',
-    closingRemark: 'Thanks for helping me figure out who I’ll be. Can’t wait to meet you all in July!<br><br>xo<br>Baby Jorts',
+    closingText: '(now scroll down to see how you have ruined our child)',
+    closingRemark: `Thanks for helping me through my first identity crisis. Can't wait to meet you all in July!`,
     formIntroText: '(help me figure out who I am by picking my traits below)',
     defaultSelectText: 'select one...',
     footer: 'Made with <i class="fa fa-fw fa-heartbeat"></i> in Amsterdam, as was the baby.<br>The source is available on <a href="https://github.com/mtimofiiv/baby-madlib"><i class="fa fa-fw fa-github-alt"></i></a>'

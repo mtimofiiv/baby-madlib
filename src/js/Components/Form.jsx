@@ -16,8 +16,8 @@ class Form extends React.Component {
     }
 
     return (
-      <p className="selection">
-        <span className="control is-3" key={key}>
+      <p className="selection" key={key}>
+        <span className="control is-3">
 
           {question.label[0]}
 
@@ -41,10 +41,6 @@ class Form extends React.Component {
     return action(e.target.dataset.slug, value);
   }
 
-  closing() {
-    return { __html: this.props.closingRemark };
-  }
-
   render() {
     const form = [];
 
@@ -60,7 +56,7 @@ class Form extends React.Component {
           {form}
         </div>
 
-        <p dangerouslySetInnerHTML={this.closing()} />
+        <p className="intro-text is-text-centered">{this.props.closingText}</p>
 
         <p className="is-text-centered chevron">
           <i className="fa fa-chevron-down"></i>
