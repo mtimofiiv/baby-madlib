@@ -17,7 +17,7 @@ class Form extends React.Component {
 
     return (
       <p className="selection">
-        <span className="control" key={key}>
+        <span className="control is-3" key={key}>
 
           {question.label[0]}
 

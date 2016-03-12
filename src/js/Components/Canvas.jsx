@@ -30,7 +30,7 @@ class Canvas extends React.Component {
         const src = `assets/${this.props.madlib[question].answers[store[question]].media}`;
 
         widgets.push(
-          <Image style={style} src={src} key={question} />
+          <Image style={this.dynamicStyles(style)} src={src} key={question} />
         );
       }
     }
@@ -38,10 +38,28 @@ class Canvas extends React.Component {
     return widgets;
   }
 
+  sizeMultiplier() {
+    const width = window.innerWidth;
+    const multiplier = width / 960;
+
+    return (multiplier > 1) ? 1 : multiplier;
+  }
+
+  dynamicStyles(styles) {
+    const coordinates = [ 'width', 'height', 'left', 'top' ];
+    const restyle = {};
+
+    for (let p in styles) {
+      if (coordinates.indexOf(p) > -1) restyle[p] = styles[p] * this.sizeMultiplier();
+    }
+
+    return restyle;
+  }
+
   render() {
     return (
-      <Surface width={960} height={640} top={0} left={0}>
-        <Image style={styles.roomImage} src="assets/room.jpg" />
+      <Surface width={960 * this.sizeMultiplier()} height={640 * this.sizeMultiplier()} top={0} left={0}>
+        <Image style={this.dynamicStyles(styles.roomImage)} src="assets/room.jpg" />
         {this.widgets()}
       </Surface>
     );
